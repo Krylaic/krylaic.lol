@@ -1,0 +1,18 @@
+{% extends '/layouts/base.twig' %}
+
+{% block content %}
+
+<form method="POST" action="/contact">
+<fieldset>
+    <legend>Contact Me</legend>
+    <label>Your Email</label>
+    <input name="email" type="email" placeholder="me@example.com">
+    <label>Message</label>
+    <textarea name="message" type="text"></textarea><br>
+    <button type="submit" class="btn">Submit</button>
+</fieldset>
+</form>
+
+<hr>
+
+{% endblock %}

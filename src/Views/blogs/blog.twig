@@ -1,0 +1,25 @@
+{% extends '/layouts/base.twig' %}
+
+{% block content %}
+
+    {% if blogs|length > 0 %}
+
+      {% for post in blogs %}
+        <div class="row-fluid">
+          <div class="span12">
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.content|length > 100 ? post.content|slice(0, 100) ~ '...' : post.content }}</p>
+            <p><a class="btn" href="/blog/{{ post.id }}">Read full post &raquo;</a></p>
+          </div>
+        </div>
+        <hr>
+      {% endfor %}
+
+    {% else %}
+
+        <p>There aren't any blog posts yet</p>
+        <hr>
+
+    {% endif %}
+
+{% endblock %}

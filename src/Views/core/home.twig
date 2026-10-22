@@ -1,0 +1,68 @@
+{% extends '/layouts/base.twig' %}
+
+{% block content %}
+<!-- Jumbotron -->
+      <div class="jumbotron">
+        <img src="/assets/img/logo.png" class="logo">
+        {% if quote %}
+        <p class="lead">{{ quote.content }}</p>
+        {% endif %}
+      </div>
+
+<div class="row">
+
+  <div class="span6">
+    <div class="box box-clear">
+      <h3>About Me</h3>
+      <hr>
+      {{ about|raw }}
+    </div>
+  </div>
+
+  <div class="span6">
+    <div class="box box-clear">
+      <h3>Socials</h3>
+      <hr>
+      
+      {% if socials|length > 0 %}
+      <ul>
+        {% for social in socials %}
+        <li><a href="{{ social.link }}">{{ social.name }}</a></li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <p>No socials yet</p>
+      {% endif %}
+    </div>
+  </div>
+
+</div>
+
+    <hr>
+
+
+    {% if blogs|length > 0 %}
+
+
+      <div class="row-fluid">
+        {% for post in blogs|slice(0, 3) %}
+            <div class="span4">
+                <h2>{{ post.title }}</h2>
+                {# this truncating thing was made by gemini #}
+                <p>{{ post.content|striptags|length > 100 ? post.content|striptags|slice(0, 100) ~ '...' : post.content|striptags }}</p>
+                <p><a class="btn" href="/blog/{{ post.id }}">Read full post &raquo;</a></p>
+                <p>Posted {{ post.date|date("M j, Y") }}</p>
+            </div>
+        {% endfor %}
+      </div>
+
+      <a href="/blog">See all blog posts</a>
+
+    {% else %}
+
+        <p>There aren't any blog posts yet</p>
+
+    {% endif %}
+
+      <hr>
+{% endblock %}

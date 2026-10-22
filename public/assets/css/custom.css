@@ -1,0 +1,52 @@
+.container {
+    max-width: 940px;
+}
+.jumbotron {
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('/assets/img/cool_picture.jpg');
+    background-size: cover;
+    padding: 20px;
+    border-radius: 6px;
+    margin: 20px 0px !important;
+}
+.logo {
+    width: 450px;
+    padding: 6px;
+}
+.jumbotron .lead {
+    color: white;
+}
+.box {
+    background-color: #e7e7e7;
+    padding: 18px;
+    margin: 0 0 20px 0;
+    border: 1px solid #d7d7d7;
+    clear: both;
+    border-radius: 6px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1), 0 1px 0 #FFFFFF inset, 0 -1px 0 #FFFFFF inset;
+}
+.box-clear {
+    background-color: transparent;
+    border-color: #dfdfdf;
+}
+.box h1, 
+.box h2, 
+.box h3,
+.box h4, 
+.box h5, 
+.box h6 {
+    margin:0 0 15px 0;
+    line-height:100%;
+}
+
+.box hr {
+    margin: 10px 0;
+}
+
+.masthead a {
+    color: #999999;
+    text-decoration: none;
+}
+
+.masthead a:hover {
+    text-decoration: underline;
+}
